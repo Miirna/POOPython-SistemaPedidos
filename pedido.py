@@ -6,11 +6,6 @@
 Crear su contructor, getter y setter y una funcion llamada "calcular total" donde le pasaremos unas unidades y nos debe calcular
 el precio final
 '''
-from itertools import product
-from operator import index
-from os import closerange
-import re
-
 
 class Producto:
 
@@ -49,7 +44,6 @@ class Producto:
         else:
             return self.__desuento.aplicarDescuento(self.__precio)
 
-
     @precio.setter
     def precio(self, valor):
         #self.__precio = valor
@@ -62,8 +56,6 @@ class Producto:
 
     def calcularTotal(self, cantidad):
         return self.precio * cantidad
-
-
 '''
 2. Crear una clase Pedido que tenga como atributos 
     -lista de productos
@@ -72,7 +64,6 @@ y agrega la siguiente funcionalidad
     -total de pedidos: muestra el precio final del pedido
     -mostrar productos: muestra los productos del pedido
 '''
-
 '''
 3. Agregar dentro de la clase pedido la siguiente funcionalidad
     -agregar producto: Le pasamos un producto y una cantidad y agregar ese proucto y cantidad a su respectiva lista
@@ -80,7 +71,6 @@ Debemos validad que le dato que nos pasen sea valido.En caso de que no, devolver
     -eliminar productos: Le pasamos el producto a borrar, si existe, lo eliminamos, sino devoler una excepcion indicandolo
 Corroborar tambien que es un producto lo que mandan 
 '''
-
 class Pedido:
     '''def __init__(self, productos, cantidades):
         self.__productos = productos
@@ -130,7 +120,6 @@ class Pedido:
         for (p,c) in zip(self.__productos, self.__cantidades):
             print(i, "Producto:", p.nombre, "Cantidad: ", str(c))
             i+= i
-
 
 '''
 4. Crear una clase Descuento que tiene los siguientes atributos:
@@ -183,7 +172,6 @@ class Descuento:
     def valor(self, val):
         self.__valor = val
 
-
     def aplicarDescuento(self, precio):
         if self. __tipo == TIPO_DESC_FIJO:
             if precio > self.__valor:
@@ -192,10 +180,6 @@ class Descuento:
                 return 0
         else:
             return precio - (precio *  (self.__valor / 100))
-
-
-
-
 
 if __name__ == '__main__':
 
@@ -283,34 +267,3 @@ if __name__ == '__main__':
 
     #producto1 = Producto(1, 'Producto 1', 50, desc2)
     #producto2 = Producto(2, 'Producto 2', 100)
-
-    #print(producto1)
-    #print(producto2)
-    #print(producto1.calcularTotal(5))
-    #print(producto2.calcularTotal(5))
-
-    #lista
-    #productos = [producto1, producto2]
-    #cantidades = [10, 5]
-  
-    
-    #pedido = Pedido(productos, cantidades)
-    #pedido = Pedido()
-    '''try:
-        
-        pedido.agregarProducto(producto1, 5)
-        pedido.agregarProducto(producto2, 2)
-
-        print( "Total pedido: ", str(pedido.totalPedidos()))
-        pedido.mostrarProductos()
-
-        pedido.eliminarProducto(producto1)
-
-        print( "Total pedido: ", str(pedido.totalPedidos()))
-        pedido.mostrarProductos()
-
-    except Exception as e:
-        print(e)'''
-
-    #print( "Total pedido: ", str(pedido.totalPedidos()))
-    #pedido.mostrarProductos()
